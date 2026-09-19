@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xvideos学生频道提供高清在线视频资源，涵盖校园生活、学习场景及青年文化相关内容。本站致力于为用户提供安全、稳定的视频浏览体验，支持多端适配。">
+    <meta name="keywords" content="xvideos学生,在线视频,高清视频,校园内容,青年文化">
+    <title>xvideos学生-高清在线视频与校园内容平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: var(--spacing-unit) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #dfe4ea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2f3542 0%, #1e272e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #a4b0be;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        aside h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            color: var(--text-sub);
+            text-decoration: none;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .category-list a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        /* Video Grid */
+        .video-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #dfe4ea;
+            overflow: hidden;
+        }
+
+        .thumbnail-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail-container img {
+            transform: scale(1.05);
+        }
+
+        .duration-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 71, 87, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--text-main);
+            /* Truncate text */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .views-count {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .upload-time {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Categories Grid (Visual) */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .category-item {
+            background: var(--card-bg);
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-item:hover {
+            border-color: var(--primary-color);
+            background-color: #fff5f5;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #a4b0be;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #a4b0be;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                    <line x1="7" y1="2" x2="7" y2="22"></line>
+                    <line x1="17" y1="2" x2="17" y2="22"></line>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <line x1="2" y1="7" x2="7" y2="7"></line>
+                    <line x1="2" y1="17" x2="7" y2="17"></line>
+                    <line x1="17" y1="17" x2="22" y2="17"></line>
+                    <line x1="17" y1="7" x2="22" y2="7"></line>
+                </svg>
+                Xvideos<span>学生</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">热门排行</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索校园生活与多元内容</h1>
+            <p>汇聚海量高清视频资源，提供流畅的在线观看体验。无论您是寻找学习资料、生活记录还是娱乐放松，这里都有适合您的精彩内容。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-grid">
+            <!-- Sidebar -->
+            <aside>
+                <h3>热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">📚 学习笔记</a></li>
+                    <li><a href="#">🏫 校园日常</a></li>
+                    <li><a href="#">🤝 社团活动</a></li>
+                    <li><a href="#">🎓 考试复习</a></li>
+                    <li><a href="#">🏃 运动健身</a></li>
+                    <li><a href="#">🎨 艺术创作</a></li>
+                    <li><a href="#">🍽️ 宿舍生活</a></li>
+                    <li><a href="#">🚀 职场入门</a></li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">热门标签</h3>
+                <ul class="category-list">
+                    <li><a href="#">#校园生活</a></li>
+                    <li><a href="#">#学习技巧</a></li>
+                    <li><a href="#">#才艺展示</a></li>
+                    <li><a href="#">#运动时刻</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <section class="video-section">
+                <h2>🔥 精选推荐</h2>
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/study1/400/225" alt="大学生图书馆高效学习技巧分享">
+                            <div class="duration-badge">12:45</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">大学生图书馆高效学习技巧分享：如何利用碎片时间提升效率</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 1.2万</span>
+                                <span class="upload-time">🕒 2天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/sports2/400/225" alt="校园篮球赛决赛精彩集锦">
+                            <div class="duration-badge">08:30</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">校园篮球赛决赛精彩集锦：逆转时刻与绝杀瞬间</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 3.5万</span>
+                                <span class="upload-time">🕒 1周前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/art3/400/225" alt="宿舍创意改造计划">
+                            <div class="duration-badge">15:20</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">宿舍创意改造计划：低成本打造温馨小窝指南</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 8,900</span>
+                                <span class="upload-time">🕒 3天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 4 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/exam4/400/225" alt="期末复习重点总结">
+                            <div class="duration-badge">22:15</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">期末复习重点总结：核心考点一网打尽</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 5.6万</span>
+                                <span class="upload-time">🕒 5天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 5 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/dorm5/400/225" alt="食堂探店：大学城美食地图">
+                            <div class="duration-badge">10:05</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">食堂探店：大学城必吃美食地图推荐</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 2.1万</span>
+                                <span class="upload-time">🕒 1天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 6 -->
+                    <article class="video-card">
+                        <div class="thumbnail-container">
+                            <img src="https://picsum.photos/seed/music6/400/225" alt="吉他弹唱社团演出">
+                            <div class="duration-badge">18:40</div>
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">吉他弹唱社团演出：民谣之夜现场版</h3>
+                            <div class="card-meta">
+                                <span class="views-count">👁 1.8万</span>
+                                <span class="upload-time">🕒 4天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <button style="padding: 12px 30px; background-color: var(--secondary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-size: 1rem; transition: var(--transition);" onmouseover="this.style.backgroundColor='#ff4757'" onmouseout="this.style.backgroundColor='#2f3542'">加载更多内容</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Category Showcase Section -->
+        <section style="background: white; padding: 30px; border-radius: 8px;">
+            <h2 style="margin-bottom: 20px;">按类别浏览</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <span class="category-icon">🎓</span>
+                    <span class="category-name">学术讲座</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🏃</span>
+                    <span class="category-name">体育运动</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🎨</span>
+                    <span class="category-name">艺术展览</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">影视欣赏</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">💻</span>
+                    <span class="category-name">科技制作</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🍳</span>
+                    <span class="category-name">美食制作</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系客服</a>
+                <a href="#">投稿指南</a>
+            </div>
+            <p class="copyright">
+                &copy; 2023 xvideos学生. All Rights Reserved. <br>
+                本站内容仅供学习交流与娱乐参考，请文明上网，理性观看。
+            </p>
+        </div>
+    </footer>
+
+</body>
+                      </html>
