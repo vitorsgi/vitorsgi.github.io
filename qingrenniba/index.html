@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情人你把我忘掉-深情情感故事与心理疗愈指南</title>
+    <meta name="description" content="情人你把我忘掉：这是一个关于情感伤痛、失恋疗愈与自我重建的专题页面。提供情感文章、心理分析、分手后的自我提升建议以及如何面对失去的实用指南。">
+    <meta name="keywords" content="情人你把我忘掉,情感故事,失恋疗愈,情感咨询,分手后的生活,自我重建">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+        }
+
+        .nav-btn:hover {
+            background-color: #1a252f;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #c0392b;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Content Grid (Articles) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-image {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Advice Section */
+        .advice-section {
+            background-color: #f0f4f8;
+        }
+
+        .advice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .advice-item {
+            background: white;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .advice-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .advice-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            background: var(--accent-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 34px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">忘不掉<span>.</span>情感</a>
+            <nav>
+                <ul>
+                    <li><a href="#stories">情感故事</a></li>
+                    <li><a href="#healing">疗愈指南</a></li>
+                    <li><a href="#psychology">心理分析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-btn">寻求帮助</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>情人你把我忘掉<br>让我们在回忆中体面告别</h1>
+                <p>面对“情人你把我忘掉”的渴望与不甘，我们为您整理了最真挚的情感故事、科学的分手疗愈方法以及重建自我的心理指南。这里没有说教，只有共鸣。</p>
+                <div class="hero-actions">
+                    <a href="#stories" class="btn btn-primary">阅读感人故事</a>
+                    <a href="#healing" class="btn btn-outline">开始自我疗愈</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">📖</span>
+                        <h3>真实情感故事</h3>
+                        <p>收录关于“情人你把我忘掉”主题的原创故事，见证那些关于爱、失去与释怀的瞬间。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🧠</span>
+                        <h3>心理疗愈指南</h3>
+                        <p>提供专业的心理建议，帮助你理解为什么会想要对方忘记，以及如何走出情感阴影。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>自我重建方案</h3>
+                        <p>分手不是终点，而是新生活的起点。我们提供具体的行动步骤，助你找回自信。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Stories Section -->
+        <section id="stories" class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选情感故事</h2>
+                    <p class="section-desc">每一个故事背后，都是一段关于“情人你把我忘掉”的真实经历。</p>
+                </div>
+                
+                <div class="content-grid">
+                    <!-- Story 1 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/love1/400/250" alt="雨夜街头的背影">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">分手</span>
+                            <h3 class="article-title">雨夜里的告别：情人你把我忘掉，就当没爱过</h3>
+                            <p class="article-excerpt">他说他不想再拖累我，希望我能彻底忘记他。看着他决绝的背影，我终于明白，有时候放手才是最深的承诺。</p>
+                            <div class="article-meta">
+                                <span>2023-10-15</span>
+                                <span>阅读 2.4k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Story 2 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/love2/400/250" alt="旧照片与回忆">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">遗憾</span>
+                            <h3 class="article-title">我发疯一样想让你把我忘掉，却忘了自己是谁</h3>
+                            <p class="article-excerpt">在感情里迷失了自我，当激情褪去，只剩下满地鸡毛。这篇故事讲述了一个关于找回自我的过程。</p>
+                            <div class="article-meta">
+                                <span>2023-10-18</span>
+                                <span>阅读 1.8k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Story 3 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/love3/400/250" alt="清晨的阳光">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">释怀</span>
+                            <h3 class="article-title">情人你把我忘掉：是惩罚也是成全</h3>
+                            <p class="article-excerpt">即使心里还有痛，我也学会了微笑。因为我知道，只有当你彻底忘记我，我才能在你的记忆里彻底消失。</p>
+                            <div class="article-meta">
+                                <span>2023-10-20</span>
+                                <span>阅读 3.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Healing Guide Section -->
+        <section id="healing" class="section advice-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">疗愈与重建指南</h2>
+                    <p class="section-desc">当你反复念叨“情人你把我忘掉”时，请尝试以下方法来平复内心。</p>
+                </div>
+
+                <div class="advice-list">
+                    <div class="advice-item">
+                        <h4>接受现实，停止内耗</h4>
+                        <p>试图让对方忘记你，往往是因为你无法接受这段关系已经结束的事实。接受是疗愈的第一步。</p>
+                    </div>
+                    <div class="advice-item">
+                        <h4>物理隔离与数字排毒</h4>
+                        <p>切断对方的联系方式，删除聊天记录。视觉和触觉的刺激会不断唤醒你的痛苦记忆。</p>
+                    </div>
+                    <div class="advice-item">
+                        <h4>建立新的生活秩序</h4>
+                        <p>规律作息、运动和培养新爱好。当你的生活被充实填满，就没有多余的空间去想念过去。</p>
+                    </div>
+                    <div class="advice-item">
+                        <h4>寻求专业心理支持</h4>
+                        <p>如果情绪严重影响生活，请及时寻求心理咨询师的帮助，进行专业的情绪疏导。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                    <p class="section-desc">关于情感困惑与心理调节的解答。</p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4 class="faq-question">为什么我会想方设法让对方忘掉我？</h4>
+                        <p class="faq-answer">这通常是一种潜意识的防御机制。试图让对方忘记，可能是为了减轻自己失去的痛苦，或者是为了证明自己在对方心中曾经存在过。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question">“情人你把我忘掉”是一种病态心理吗？</h4>
+                        <p class="faq-answer">这不一定属于病态。在情感激烈的阶段，这种强烈的情感表达是正常的。但如果这种执念导致你无法正常生活，则需要引起重视并进行自我调节。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question">如何判断自己是否走出了失恋？</h4>
+                        <p class="faq-answer">当你再次听到对方的名字时，内心不再有剧烈的波澜；当你能平静地回忆起过去的美好与遗憾；当你开始对新的生活感兴趣，这就是好转的信号。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question">忘记一个人真的可能吗？</h4>
+                        <p class="faq-answer">从记忆的角度看，大脑很难彻底删除痕迹。但“忘记”更多是指不再受其情绪控制，不再影响当下的生活。这才是我们追求的真正释怀。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于忘不掉.</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">
+                        我们专注于情感内容创作与心理咨询服务，致力于帮助每一位在爱中迷失的人找回自我。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#stories">情感故事</a></li>
+                        <li><a href="#healing">疗愈指南</a></li>
+                        <li><a href="#psychology">心理分析</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">情感测试</a></li>
+                        <li><a href="#">心理咨询预约</a></li>
+                        <li><a href="#">匿名倾诉树洞</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">support@forget-me-not.com</a></li>
+                        <li><a href="#">微信公众号：忘不掉情感</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 忘不掉情感指南 版权所有 | 本站内容仅供情感交流与参考</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
