@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六导航 - 精选实用网站导航与资源聚合平台</title>
+    <meta name="description" content="第六导航为您提供高效、安全、分类清晰的在线导航服务。包含工具软件、设计素材、影视娱乐、新闻资讯等多类优质网站推荐，助您快速找到所需资源。">
+    <meta name="keywords" content="第六导航,网站导航,在线导航,工具导航,网站大全,资源聚合">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 16px 8px 36px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--bg-color);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            fill: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Quick Access */
+        .quick-access {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .quick-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .quick-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.5rem;
+        }
+
+        .quick-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .quick-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-block {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .category-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafafa;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .site-list {
+            padding: 10px;
+        }
+
+        .site-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .site-item:hover {
+            background: var(--bg-color);
+        }
+
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #e2e8f0;
+            margin-right: 12px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+        
+        .site-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .site-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .site-name {
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .site-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .visit-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .site-item:hover .visit-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--text-main);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links, .search-bar {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                第六导航
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">工具软件</a>
+                <a href="#">设计素材</a>
+                <a href="#">影视娱乐</a>
+                <a href="#">新闻资讯</a>
+                <a href="#">关于我们</a>
+            </nav>
+            <div class="search-bar">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" placeholder="搜索网站、工具或资源...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>发现好用的网站，提升工作效率</h1>
+                <p>第六导航为您精选全网优质在线资源，涵盖工具软件、设计素材、影视娱乐、学术办公等多个领域，助您轻松应对各类需求。</p>
+                <div class="hero-actions">
+                    <a href="#tools" class="btn btn-primary">开始浏览</a>
+                    <a href="#" class="btn btn-outline">提交收录</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <div class="container quick-access">
+            <div class="quick-grid">
+                <div class="quick-card">
+                    <div class="quick-icon">⌨️</div>
+                    <h3>在线工具</h3>
+                    <p>转换、压缩、格式化</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">🎨</div>
+                    <h3>设计灵感</h3>
+                    <p>图片、字体、模板</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">🎬</div>
+                    <h3>影视资源</h3>
+                    <p>高清电影、剧集</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">📚</div>
+                    <h3>在线学习</h3>
+                    <p>网课、文档、教程</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Tools -->
+        <section id="tools" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">实用工具</h2>
+                    <p class="section-desc">提高效率，简化流程的必备在线服务</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-block">
+                        <div class="category-header">
+                            <h3 class="category-title"><span class="category-icon">💻</span>办公协作</h3>
+                        </div>
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <div class="site-icon">📄</div>
+                                <div class="site-info">
+                                    <div class="site-name">腾讯文档</div>
+                                    <div class="site-desc">在线文档、表格与演示</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">📊</div>
+                                <div class="site-info">
+                                    <div class="site-name">石墨文档</div>
+                                    <div class="site-desc">多人实时协作的在线文档</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">☁️</div>
+                                <div class="site-info">
+                                    <div class="site-name">百度网盘</div>
+                                    <div class="site-desc">个人云存储与文件共享</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category-block">
+                        <div class="category-header">
+                            <h3 class="category-title"><span class="category-icon">🛠️</span>开发调试</h3>
+                        </div>
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <div class="site-icon">🌐</div>
+                                <div class="site-info">
+                                    <div class="site-name">MDN Web Docs</div>
+                                    <div class="site-desc">Web 开发者权威技术文档</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">🔍</div>
+                                <div class="site-info">
+                                    <div class="site-name">Can I Use</div>
+                                    <div class="site-desc">检查浏览器对 CSS/JS 的支持</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">🎨</div>
+                                <div class="site-info">
+                                    <div class="site-name">CSS-Tricks</div>
+                                    <div class="site-desc">前端开发技巧与教程</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category-block">
+                        <div class="category-header">
+                            <h3 class="category-title"><span class="category-icon">🎨</span>设计素材</h3>
+                        </div>
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <div class="site-icon">🖼️</div>
+                                <div class="site-info">
+                                    <div class="site-name">Unsplash</div>
+                                    <div class="site-desc">免费高质量高清图片</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">✏️</div>
+                                <div class="site-info">
+                                    <div class="site-name">Dribbble</div>
+                                    <div class="site-desc">设计师灵感与作品展示</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">📦</div>
+                                <div class="site-info">
+                                    <div class="site-name">Iconfont</div>
+                                    <div class="site-desc">阿里巴巴矢量图标库</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Entertainment -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">影视娱乐</h2>
+                    <p class="section-desc">最新的电影、电视剧与动漫资源</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-block">
+                        <div class="category-header">
+                            <h3 class="category-title"><span class="category-icon">📺</span>在线视频</h3>
+                        </div>
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <div class="site-icon">🎬</div>
+                                <div class="site-info">
+                                    <div class="site-name">Bilibili</div>
+                                    <div class="site-desc">国内知名的视频弹幕网站</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">🎥</div>
+                                <div class="site-info">
+                                    <div class="site-name">腾讯视频</div>
+                                    <div class="site-desc">热门电视剧、综艺与电影</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category-block">
+                        <div class="category-header">
+                            <h3 class="category-title"><span class="category-icon">🎵</span>音乐电台</h3>
+                        </div>
+                        <ul class="site-list">
+                            <li class="site-item">
+                                <div class="site-icon">🎶</div>
+                                <div class="site-info">
+                                    <div class="site-name">网易云音乐</div>
+                                    <div class="site-desc">发现好音乐，听歌看评论</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                            <li class="site-item">
+                                <div class="site-icon">📻</div>
+                                <div class="site-info">
+                                    <div class="site-name">喜马拉雅</div>
+                                    <div class="site-desc">听书、有声小说与播客</div>
+                                </div>
+                                <a href="#" class="visit-btn">访问</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>收录网站</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>分类栏目</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10w+</h3>
+                        <p>月均访问</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>实时更新</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>第六导航</h2>
+                    <p>致力于为用户提供最便捷、最全面的网络资源导航服务。我们精心筛选每一个链接，确保其安全性与实用性。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>分类导航</h4>
+                    <ul>
+                        <li><a href="#">工具软件</a></li>
+                        <li><a href="#">设计素材</a></li>
+                        <li><a href="#">影视娱乐</a></li>
+                        <li><a href="#">生活服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">RSS 订阅</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 第六导航 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
