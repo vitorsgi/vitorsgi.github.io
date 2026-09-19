@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业射击标靶选购指南，涵盖室内外射击靶材、电子靶系统、纸靶与钢靶分类，以及安全射击规范与保养维护技巧。">
+    <meta name="keywords" content="射击标靶, 射击器材, 纸靶, 电子靶, 射击安全">
+    <title>射击标靶-专业射击器材与安全规范选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 标靶分类网格 */
+        .grid-section {
+            margin-bottom: 4rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* 信息表格 */
+        .comparison-section {
+            background-color: var(--bg-light);
+            padding: 3rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* 安全规范 */
+        .safety-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .safety-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .safety-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .safety-content ul {
+            margin-top: 1rem;
+        }
+
+        .safety-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .safety-content li::before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .safety-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-question.active::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span>🎯</span> 射击标靶专家
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#paper">纸质靶材</a></li>
+                    <li><a href="#metal">金属靶材</a></li>
+                    <li><a href="#electronic">电子靶</a></li>
+                    <li><a href="#safety">安全规范</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">联系我们</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>精准射击，始于标靶</h1>
+            <p>无论是专业射击训练、警用射击考核还是户外休闲射击，我们为您提供从传统纸质靶到高科技电子靶的全方位解决方案。</p>
+            <a href="#types" class="cta-button" style="background-color: var(--accent-color);">探索标靶类型</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- 标靶类型介绍 -->
+        <section id="types" class="container">
+            <div class="section-title">
+                <h2>常见射击标靶分类</h2>
+                <p>根据射击环境、距离及精度要求，选择最适合您的标靶类型</p>
+            </div>
+
+            <div class="grid-container">
+                <!-- 纸质靶 -->
+                <article class="card" id="paper">
+                    <div class="card-img-placeholder">📄</div>
+                    <div class="card-body">
+                        <span class="card-tag">基础训练</span>
+                        <h3>传统纸质靶</h3>
+                        <p>适用于近距离射击练习。分为10米、25米、50米等不同距离规格。采用高反光白纸印制同心圆环，清晰易读，是射击入门的标准选择。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 金属靶 -->
+                <article class="card" id="metal">
+                    <div class="card-img-placeholder">⚙️</div>
+                    <div class="card-body">
+                        <span class="card-tag">户外/实弹</span>
+                        <h3>金属标靶</h3>
+                        <p>包括胸环靶、半身靶及活动靶。材质多为钢板，耐冲击，可回收利用。配备自动复位装置，适合高频率实弹射击训练。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 电子靶 -->
+                <article class="card" id="electronic">
+                    <div class="card-img-placeholder">📊</div>
+                    <div class="card-body">
+                        <span class="card-tag">高科技</span>
+                        <h3>电子靶系统</h3>
+                        <p>集成光电感应技术，能自动记录弹孔位置、环数及散布图。配备专业分析软件，实时生成成绩报告，是警校和职业射击队的高效辅助工具。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 靶架 -->
+                <article class="card">
+                    <div class="card-img-placeholder">🛠️</div>
+                    <div class="card-body">
+                        <span class="card-tag">配套器材</span>
+                        <h3>便携式靶架</h3>
+                        <p>轻量化设计，方便户外携带和快速组装。具有防风稳定性，确保在野外环境下标靶依然稳固。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 对比表格 -->
+        <section class="comparison-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>标靶性能对比</h2>
+                    <p>不同材质标靶的优缺点分析</p>
+                </div>
+                <div class="comparison-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>纸质靶</th>
+                                <th>金属靶</th>
+                                <th>电子靶</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>成本</strong></td>
+                                <td>低，耗材便宜</td>
+                                <td>中高，需定期维护</td>
+                                <td>高，设备昂贵</td>
+                            </tr>
+                            <tr>
+                                <td><strong>耐用性</strong></td>
+                                <td>低，易破损</td>
+                                <td>高，耐冲击</td>
+                                <td>极高，精密仪器</td>
+                            </tr>
+                            <tr>
+                                <td><strong>数据反馈</strong></td>
+                                <td>人工记录，误差大</td>
+                                <td>人工记录，误差中</td>
+                                <td>自动记录，精确</td>
+                            </tr>
+                            <tr>
+                                <td><strong>适用场景</strong></td>
+                                <td>室内/初学练习</td>
+                                <td>户外/实弹考核</td>
+                                <td>专业训练/教学</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安全规范 -->
+        <section id="safety" class="container">
+            <div class="section-title">
+                <h2>射击安全规范</h2>
+            </div>
+            <div class="safety-section">
+                <div class="safety-content">
+                    <h3>安全第一：射击标靶使用须知</h3>
+                    <p>无论使用何种标靶，始终将安全放在首位。严格遵守“四项基本原则”：始终假设武器上膛；始终瞄准目标以外的安全区域；只有在你准备好射击时才扣动扳机；射击后立即确认武器安全。</p>
+                    <ul>
+                        <li><strong>检查背景：</strong>确保标靶后方有足够厚度的掩体，防止跳弹或穿透造成伤害。</li>
+                        <li><strong>清理区域：</strong>射击时严禁无关人员进入射击线后方。</li>
+                        <li><strong>定期检查：</strong>定期检查金属靶的焊接处和电子靶的线路，防止老化引发故障。</li>
+                    </ul>
+                </div>
+                <div class="safety-image">
+                    <span style="font-size: 3rem;">🛡️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">10米射击标靶的尺寸是多少？</button>
+                <div class="faq-answer">
+                    <p>标准的10米气步枪/手枪靶通常为150mm x 150mm，同心圆环直径从10环的11.5mm到1环的100mm不等。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">如何保养金属射击标靶？</button>
+                <div class="faq-answer">
+                    <p>金属靶应存放在干燥通风处，防止生锈。射击后应及时清理弹孔周围的金属屑，对于活动靶的机械复位装置，建议每年添加一次润滑油。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">电子靶系统需要什么配置？</button>
+                <div class="faq-answer">
+                    <p>电子靶系统通常需要连接电脑或专用显示器，需要稳定的电源供应。部分高端系统支持蓝牙数据传输，可实时上传至云端服务器。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>专注射击器材领域10年，致力于为专业人士和爱好者提供最优质的标靶产品与安全指导。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品分类</h4>
+                    <ul>
+                        <li><a href="#">纸质靶材</a></li>
+                        <li><a href="#">金属靶架</a></li>
+                        <li><a href="#">电子靶系统</a></li>
+                        <li><a href="#">靶衣与附件</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@shoottarget.com</li>
+                        <li>地址：射击器材产业园A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 射击标靶专家. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ手风琴交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // 切换当前按钮的激活状态
+                    this.classList.toggle('active');
+                    
+                    // 获取对应的答案区域
+                    const answer = this.nextElementSibling;
+                    
+                    if (this.classList.contains('active')) {
+                        // 动态设置高度以实现平滑动画
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+                    
+                    // 可选：关闭其他打开的问答
+                    questions.forEach(otherQuestion => {
+                        if (otherQuestion !== this && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.maxHeight = 0;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
