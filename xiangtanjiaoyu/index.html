@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="湘潭教育网提供湘潭市教育资讯、政策发布、招生考试信息、名师风采及家校互动平台，致力于服务湘潭师生家长。">
+    <meta name="keywords" content="湘潭教育网,湘潭教育,湘潭教育局,湘潭招生,湘潭考试,湘潭教育资讯">
+    <title>湘潭教育网-湘潭市教育资讯与服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ffc107;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #f4f6f9;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 5px solid var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 200px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            background-color: var(--white);
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* News List Section */
+        .news-section {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .news-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-item.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 500;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .news-title:hover {
+            color: var(--primary-color);
+        }
+
+        .news-date {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .hot-list li {
+            margin-bottom: 10px;
+        }
+
+        .hot-list a {
+            font-size: 14px;
+            color: var(--text-dark);
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-list .rank {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            font-size: 12px;
+            margin-right: 8px;
+            color: var(--text-light);
+        }
+
+        .hot-list .rank.top-1 { background: #ff4d4f; color: white; }
+        .hot-list .rank.top-2 { background: #ff7a45; color: white; }
+        .hot-list .rank.top-3 { background: #ffc53d; color: white; }
+
+        .notice-box {
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .notice-item {
+            font-size: 13px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .notice-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Services Grid */
+        .services-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--secondary-color);
+            padding: 25px 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified mobile handling */
+            }
+            .search-box {
+                display: none;
+            }
+            .header-inner {
+                justify-content: center;
+            }
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10v6"></path>
+                    <path d="M20 16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8Z"></path>
+                    <path d="M12 18v-8"></path>
+                    <path d="M12 10h.01"></path>
+                </svg>
+                <span>湘潭教育网</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">政务公开</a>
+                <a href="#">招生考试</a>
+                <a href="#">教育资讯</a>
+                <a href="#">师资队伍</a>
+                <a href="#">互动交流</a>
+            </nav>
+
+            <div class="search-box">
+                <input type="text" placeholder="搜索政策、学校、公告...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>服务湘潭教育，赋能未来成长</h1>
+                <p>湘潭教育网是湘潭市教育局官方网站，提供权威的教育政策发布、及时的招生考试信息、丰富的教育资源及高效的家校互动平台。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>直属单位</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1200+</h3>
+                        <p>各级学校</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>80万+</h3>
+                        <p>师生服务</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/xiangtan_edu/600/400" alt="湘潭教育风景示意图">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-layout">
+        
+        <!-- Left Column -->
+        <main>
+            <!-- Services Grid -->
+            <section class="services-section">
+                <h2 class="section-title">便民服务</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <div class="service-name">中考报名</div>
+                        <div class="service-desc">2024年湘潭市初中学业水平考试网上报名通道</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <div class="service-name">高考查分</div>
+                        <div class="service-desc">湖南省普通高校招生考试录取信息查询系统</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📂</div>
+                        <div class="service-name">政策文件</div>
+                        <div class="service-desc">最新教育法律法规及湘潭市教育实施意见</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📞</div>
+                        <div class="service-name">咨询投诉</div>
+                        <div class="service-desc">在线提交教育乱收费及师德师风问题反馈</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Tabs -->
+            <section class="news-section">
+                <div class="news-tabs">
+                    <div class="tab-item active">教育要闻</div>
+                    <div class="tab-item">县区动态</div>
+                    <div class="tab-item">招生考试</div>
+                    <div class="tab-item">学校风采</div>
+                </div>
+                
+                <div class="news-list">
+                    <article class="news-item">
+                        <a href="#" class="news-title">湘潭市召开2024年教育工作会议，部署深化教育综合改革重点任务</a>
+                        <span class="news-date">2024-03-25</span>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-title">关于做好2024年普通中小学招生入学工作的通知</a>
+                        <span class="news-date">2024-03-24</span>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-title">湘潭大学入选国家“双一流”建设高校名单，省部共建迈出新步伐</a>
+                        <span class="news-date">2024-03-22</span>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-title">湘潭市开展“千名教师访万家”活动，构建家校社协同育人新格局</a>
+                        <span class="news-date">2024-03-20</span>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-title">市教育局发布关于规范校外培训机构收费行为的公告</a>
+                        <span class="news-date">2024-03-18</span>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-title">雨湖区教育局：多措并举减轻中小学生课业负担</a>
+                        <span class="news-date">2024-03-15</span>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="btn btn-outline">查看更多</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Column Sidebar -->
+        <aside>
+            <!-- Hot News Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门推荐</h3>
+                <ul class="hot-list">
+                    <li><a href="#"><span class="rank top-1">1</span>2024年湘潭市普通高中录取分数线预测</a></li>
+                    <li><a href="#"><span class="rank top-2">2</span>湘潭市中小学生体质健康监测结果公布</a></li>
+                    <li><a href="#"><span class="rank top-3">3</span>市教育局关于规范教师从教行为的若干规定</a></li>
+                    <li><a href="#"><span class="rank">4</span>湘潭县一中、湘钢一中2024年招生简章</a></li>
+                    <li><a href="#"><span class="rank">5</span>关于做好2024年义务教育阶段学校招生工作的通知</a></li>
+                    <li><a href="#"><span class="rank">6</span>湘潭市“最美教师”评选活动启动</a></li>
+                    <li><a href="#"><span class="rank">7</span>湘潭市中小学食堂食品安全专项整治行动</a></li>
+                </ul>
+            </div>
+
+            <!-- Notice Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">通知公告</h3>
+                <div class="notice-box">
+                    <div class="notice-item">2024年教师资格认定工作开始报名</div>
+                    <div class="notice-item">关于开展全市中小学教师信息技术应用能力提升工程2.0培训的通知</div>
+                    <div class="notice-item">湘潭市教育系统党风廉政建设工作会议召开</div>
+                    <div class="notice-item">市教育局关于禁止在职教师有偿补课的公告</div>
+                </div>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-widget" style="padding: 10px; text-align: center; background: #eee; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                <span style="color: #999; font-size: 14px;">[广告位：教育合作推广]</span>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于湘潭教育网</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: #bdc3c7;">
+                        湘潭教育网是湘潭市教育局主办的教育行业门户网站，旨在构建信息公开、服务高效、互动便捷的网络平台。我们致力于传播教育正能量，服务湘潭教育事业改革发展大局。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">市教育局</a></li>
+                        <li><a href="#">湘潭大学</a></li>
+                        <li><a href="#">湖南科技大学</a></li>
+                        <li><a href="#">湘潭师范学院</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>常用链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">湖南省教育厅</a></li>
+                        <li><a href="#">中国教育在线</a></li>
+                        <li><a href="#">国家中小学智慧教育平台</a></li>
+                        <li><a href="#">湘潭市人社局</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>联系我们</h4>
+                    <p>地址：湘潭市岳塘区火炬路2号</p>
+                    <p>邮编：411100</p>
+                    <p>电话：0731-12345678</p>
+                    <p>邮箱：jyj@xiangtan.gov.cn</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2024 湘潭教育网 All Rights Reserved. 湘ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
