@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="乞讨歌专题页，收录经典乞讨歌谣、街头艺人音乐、流浪歌手民谣及相关文化背景介绍。">
+    <meta name="keywords" content="乞讨歌, 街头艺人, 流浪歌手, 民谣, 街头音乐, 乞讨歌谣">
+    <title>乞讨歌-街头艺人音乐与民谣文化收录</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-main: #2c2c2c;
+            --text-secondary: #666;
+            --accent-color: #8d6e63;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #efebe9 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Content Grid */
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .card-img-placeholder {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img-placeholder::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.1));
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Featured List */
+        .featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .featured-item {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s;
+        }
+
+        .featured-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .featured-img {
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .featured-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Category Pills */
+        .category-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Audio Player Mock */
+        .audio-player {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #fafafa;
+            border-radius: 6px;
+        }
+
+        .play-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .track-info {
+            flex: 1;
+        }
+
+        .track-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .track-artist {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+
+            .featured-item {
+                flex-direction: column;
+            }
+            
+            .featured-img {
+                width: 100%;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            街头音乐<span>志</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#classic">经典歌谣</a></li>
+                <li><a href="#modern">现代民谣</a></li>
+                <li><a href="#artists">艺人故事</a></li>
+                <li><a href="#culture">文化背景</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探寻街头旋律：乞讨歌与民谣文化</h1>
+            <p>记录那些在街头巷尾、风雪雨中传唱的歌谣。从传统的乞讨调到现代流浪歌手的叙事，这里收藏了最真实的市井声音与人文故事。</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>收录曲目</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>艺人访谈</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10万+</h3>
+                    <p>播放量</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured List Section -->
+    <section class="container content-section" id="classic">
+        <div class="section-header">
+            <div>
+                <h2>经典乞讨歌谣</h2>
+                <p>传统街头艺术，承载着历史记忆与民间智慧</p>
+            </div>
+        </div>
+
+        <div class="featured-list">
+            <!-- Item 1 -->
+            <article class="featured-item">
+                <img src="https://picsum.photos/seed/oldstreet/400/300" alt="街头艺人演奏" class="featured-img">
+                <div class="featured-content">
+                    <div class="card-tag">传统调子</div>
+                    <h3>《叫卖调》</h3>
+                    <p class="card-desc">这是中国民间最古老的商业音乐形式之一。不同地域有独特的旋律，既是沟通买卖的工具，也是一种即兴的音乐表演。收录了北京叫卖、天津货郎等经典声调。</p>
+                    <div class="audio-player">
+                        <button class="play-btn" aria-label="播放">▶</button>
+                        <div class="track-info">
+                            <div class="track-title">北京叫卖调 - 模拟录音</div>
+                            <div class="track-artist">民间原声</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="featured-item">
+                <img src="https://picsum.photos/seed/wind/400/300" alt="风吹过街道" class="featured-img">
+                <div class="featured-content">
+                    <div class="card-tag">流浪叙事</div>
+                    <h3>《流浪之歌》</h3>
+                    <p class="card-desc">源自西方的街头艺人传统，在东方文化中演变出独特的风格。歌词多讲述漂泊、孤独与希望，旋律简单却极具感染力，是许多街头歌手的必唱曲目。</p>
+                    <div class="audio-player">
+                        <button class="play-btn" aria-label="播放">▶</button>
+                        <div class="track-info">
+                            <div class="track-title">Street Song (Demo)</div>
+                            <div class="track-artist">无名氏</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="container content-section" id="modern">
+        <div class="section-header">
+            <div>
+                <h2>现代民谣与独立音乐</h2>
+                <p>当代音乐人如何重新诠释街头文化</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/guitar/400/300" alt="吉他" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">民谣</div>
+                    <h3 class="card-title">《西海情歌》</h3>
+                    <p class="card-desc">虽然非直接乞讨歌，但因其歌词中强烈的流浪、孤独意象，常被归类为具有街头叙事风格的民谣作品。</p>
+                    <div class="card-footer">
+                        <span>播放: 1.2M</span>
+                        <span>风格: 流行民谣</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/harp/400/300" alt="街头表演" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">原创</div>
+                    <h3 class="card-title">《城市边缘》</h3>
+                    <p class="card-desc">独立音乐人创作的关于城市边缘人群的民谣，探讨生存状态与梦想，在各大音乐平台获得高播放量。</p>
+                    <div class="card-footer">
+                        <span>播放: 850K</span>
+                        <span>风格: 原声吉他</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/bowl/400/300" alt="讨饭碗" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">民俗</div>
+                    <h3 class="card-title">《行乞调》</h3>
+                    <p class="card-desc">保留了传统乞讨歌的旋律特征，但在歌词上进行了现代化改编，讲述现代社会的生存挑战。</p>
+                    <div class="card-footer">
+                        <span>播放: 320K</span>
+                        <span>风格: 传统改编</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/rain/400/300" alt="雨夜街头" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">实验</div>
+                    <h3 class="card-title">《街头回响》</h3>
+                    <p class="card-desc">采样真实的街头环境音与讨要声，结合电子音乐制作而成的实验性作品。</p>
+                    <div class="card-footer">
+                        <span>播放: 150K</span>
+                        <span>风格: 环境音乐</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Cultural Context Section -->
+    <section class="container content-section" style="background-color: #f9f9f9; padding: 3rem; border-radius: 12px; margin-bottom: 3rem;">
+        <div class="section-header" style="margin-bottom: 1.5rem;">
+            <h2>文化背景与思考</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">乞讨歌的社会功能</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    在历史上，乞讨歌不仅是乞讨者获取生存资源的手段，更是一种社交活动。它往往与特定的节日、仪式或地理位置相关联。通过演唱，乞讨者融入了当地的文化脉络。
+                </p>
+                <p style="color: var(--text-secondary);">
+                    不同的地区有不同的“调子”，例如北方的粗犷高亢与南方的婉转细腻，反映了地域文化的多样性。
+                </p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">现代视角的转变</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    随着社会经济的发展和城市管理的规范化，传统的乞讨行为逐渐减少。然而，“乞讨歌”作为一种文化符号，被现代音乐人重新挖掘。它不再代表生存的无奈，而成为了一种表达自由、流浪精神和对现实思考的艺术形式。
+                </p>
+                <p style="color: var(--text-secondary);">
+                    许多街头艺人通过音乐进行“精神乞讨”，即不索取物质，而是通过音乐触动听众的内心，获得精神上的共鸣与尊重。
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>街头音乐志</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6; color: #999;">
+                    致力于记录和保护街头音乐文化，为流浪歌手和民谣爱好者提供交流平台。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#">经典歌谣</a></li>
+                    <li><a href="#">艺人故事</a></li>
+                    <li><a href="#">音乐下载</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关主题</h4>
+                <div>
+                    <span class="category-pill">街头摄影</span>
+                    <span class="category-pill">城市民谣</span>
+                    <span class="category-pill">流浪生活</span>
+                    <span class="category-pill">街头艺术</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 街头音乐志. All Rights Reserved. 本站内容仅供文化参考与交流。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple script for play button interaction simulation
+    document.addEventListener('DOMContentLoaded', function() {
+        const playButtons = document.querySelectorAll('.play-btn');
+        
+        playButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Toggle icon state
+                if (this.textContent === '▶') {
+                    this.textContent = '❚❚';
+                    this.style.backgroundColor = '#5d4037';
+                } else {
+                    this.textContent = '▶';
+                    this.style.backgroundColor = '#8d6e63';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
