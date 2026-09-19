@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="背光类型全面解析：深入对比OLED、LED、Mini-LED、QLED及侧入光等显示技术差异，提供选购指南与参数解读。">
+    <meta name="keywords" content="背光类型, OLED, LED, Mini-LED, QLED, 显示器背光, 电视背光技术, 选购指南">
+    <title>背光类型-显示技术深度解析与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Main Layout */
+        main {
+            max-width: var(--container-width);
+            margin: 3rem auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Comparison Cards */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .tech-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tech-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .tech-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .badge-elite { background-color: #dcfce7; color: #166534; }
+        .badge-mainstream { background-color: #dbeafe; color: #1e40af; }
+        .badge-budget { background-color: #f1f5f9; color: #475569; }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .tech-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .tech-features {
+            margin-top: 1rem;
+        }
+
+        .tech-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .tech-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Guide Section */
+        .guide-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .guide-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-list li {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+        
+        .faq-list li.active .faq-answer {
+            display: block;
+        }
+
+        .faq-list li.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-list li .faq-question::after {
+            content: '+';
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 4rem 1rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: var(--container-width);
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                padding: 0 1rem;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span>显示百科</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">背光类型</a></li>
+                    <li><a href="#">面板技术</a></li>
+                    <li><a href="#">色彩校准</a></li>
+                    <li><a href="#">选购指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>背光类型深度解析</h1>
+            <p>从OLED到Mini-LED，全面了解各类显示背光技术的原理、优势与适用场景，助您做出明智的选购决策。</p>
+            <a href="#comparison" class="cta-button">开始技术对比</a>
+        </div>
+    </section>
+
+    <main id="comparison">
+        <!-- 技术对比区 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">主流背光类型对比</h2>
+            </div>
+            <div class="comparison-grid">
+                <!-- OLED -->
+                <article class="tech-card">
+                    <div class="card-header">
+                        <span class="tech-name">OLED</span>
+                        <span class="tech-badge badge-elite">顶级画质</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="tech-desc">自发光技术，每个像素独立控制，无需背光模组，实现真正的黑色和无限对比度。</p>
+                        <ul class="tech-features">
+                            <li>完美的黑色表现</li>
+                            <li>无残影与拖影</li>
+                            <li>超宽色域（DCI-P3 98%+）</li>
+                            <li>可视角度极佳</li>
+                            <li>价格相对较高</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Mini-LED -->
+                <article class="tech-card">
+                    <div class="card-header">
+                        <span class="tech-name">Mini-LED</span>
+                        <span class="tech-badge badge-elite">高亮度进阶</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="tech-desc">采用更小尺寸的LED灯珠（通常<0.2mm），数量是传统LED的数百倍，实现更高局部调光和亮度。</p>
+                        <ul class="tech-features">
+                            <li>超高峰值亮度（1000尼特+）</li>
+                            <li>深邃黑色（混合背光）</li>
+                            <li>寿命长于OLED</li>
+                            <li>价格适中</li>
+                            <li>需注意光晕问题</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- QLED / Quantum Dot -->
+                <article class="tech-card">
+                    <div class="card-header">
+                        <span class="tech-name">QLED</span>
+                        <span class="tech-badge badge-mainstream">色彩增强</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="tech-desc">在LCD背光基础上增加量子点膜，通过量子点材料将蓝光转化为更纯净的红绿光，提升色彩表现。</p>
+                        <ul class="tech-features">
+                            <li>色彩鲜艳度高</li>
+                            <li>亮度极高（HDR效果好）</li>
+                            <li>寿命长，护眼特性好</li>
+                            <li>黑色依赖背光关断</li>
+                            <li>需配合高刷新率面板</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- LED / Edge-Lit -->
+                <article class="tech-card">
+                    <div class="card-header">
+                        <span class="tech-name">传统LED</span>
+                        <span class="tech-badge badge-budget">入门首选</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="tech-desc">采用侧入光或直下光设计，技术成熟，成本较低，是目前中低端显示设备的主流选择。</p>
+                        <ul class="tech-features">
+                            <li>性价比高</li>
+                            <li>技术成熟稳定</li>
+                            <li>亮度均匀性一般</li>
+                            <li>色彩表现中规中矩</li>
+                            <li>大屏响应速度较慢</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 选购指南 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">选购指南：如何选择背光类型</h2>
+            </div>
+            <div class="guide-container">
+                <div class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>关注使用场景</h3>
+                        <p>如果您追求极致的影音体验，经常观看暗场电影，OLED是最佳选择，因为它能呈现纯黑。如果您是游戏玩家且对烧屏有顾虑，Mini-LED或高规格QLED是更稳妥的方案。</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>确认亮度需求</h3>
+                        <p>在明亮的环境下观看，需要高亮度（1000尼特以上）的屏幕。Mini-LED和QLED通常能提供更高的峰值亮度，而OLED在强光下的表现相对受限。</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>考虑预算与寿命</h3>
+                        <p>OLED屏幕虽然画质无敌，但价格昂贵且存在烧屏风险。传统LED和QLED屏幕价格亲民，且物理寿命长，适合预算有限或长期使用的用户。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+        <!-- 常见问题 -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title">常见问题 (FAQ)</h3>
+            <ul class="faq-list">
+                <li class="active">
+                    <div class="faq-question">OLED会烧屏吗？</div>
+                    <div class="faq-answer">OLED存在烧屏风险，但现代高端OLED面板已大幅提升寿命，且厂商提供了防烧屏技术和自动亮度调节功能，正常使用下影响较小。</div>
+                </li>
+                <li>
+                    <div class="faq-question">Mini-LED和QLED有什么区别？</div>
+                    <div class="faq-answer">两者都是LCD的升级技术。Mini-LED侧重于灯珠数量和调光单元，提升亮度和对比度；QLED侧重于量子点材料，提升色彩纯度和饱和度。很多高端电视会同时采用两者。</div>
+                </li>
+                <li>
+                    <div class="faq-question">侧入光和直下光哪个好？</div>
+                    <div class="faq-answer">直下光（背部发光）亮度高、均匀性好，适合大屏电视；侧入光（边缘发光）机身更薄，适合显示器和中小尺寸电视，但亮度分布可能不均。</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 选购贴士 -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title">选购贴士</h3>
+            <ul class="faq-list">
+                <li>
+                    <div class="faq-question">关注分区数量</div>
+                    <div class="faq-answer">对于Mini-LED和QLED，背光分区数量越多，控光越精准，黑色表现越好。</div>
+                </li>
+                <li>
+                    <div class="faq-question">色域标准</div>
+                    <div class="faq-answer">选择支持DCI-P3 90%以上或sRGB 99%以上的面板，色彩还原更准确。</div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>显示百科</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">致力于为用户提供专业、客观的显示技术解析与选购指南。帮助消费者看懂参数，选对设备。</p>
+            </div>
+            <div class="footer-col">
+                <h4>技术分类</h4>
+                <ul>
+                    <li><a href="#">OLED技术</a></li>
+                    <li><a href="#">LCD面板</a></li>
+                    <li><a href="#">Mini-LED</a></li>
+                    <li><a href="#">Micro-LED</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关服务</h4>
+                <ul>
+                    <li><a href="#">显示器评测</a></li>
+                    <li><a href="#">电视对比</a></li>
+                    <li><a href="#">色彩校准</a></li>
+                    <li><a href="#">行业资讯</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：support@display-baike.com</li>
+                    <li>地址：技术路88号显示科技园</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 显示百科. All rights reserved. 本站内容仅供学习与参考，不代表任何商业立场。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-list li');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他所有打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                      </html>
